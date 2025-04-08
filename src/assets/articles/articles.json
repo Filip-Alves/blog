@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Introduction à Angular",
+    "filename": "article1.md",
+    "path": "assets/articles/article1.md",
+    "description": "Un article de démarrage avec Angular 19",
+    "date": "2025-03-20",
+    "tags": ["angular", "typescript", "starter"]
+  },
+  {
+    "title": "Fiche de note Angular",
+    "filename": "article2.md",
+    "path": "assets/articles/article2.md",
+    "description": "Toutes mes notes sur les bases en Angular",
+    "date": "2025-04-01",
+    "tags": ["angular", "services"]
+  }
+]
