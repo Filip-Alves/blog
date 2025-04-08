@@ -1,12 +1,12 @@
 // article.component.ts
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { ArticleService } from '../article.service';
 import { Article } from './article.model';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -17,13 +17,11 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 })
 export class ArticleComponent implements OnInit, OnDestroy {
   articles: Article[] = [];
+  @Input() article!: Article;
   faArrowRight = faArrowRight;
   private destroy$ = new Subject<void>();
 
-  constructor(
-    private articleService: ArticleService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private articleService: ArticleService, private router: Router) {}
 
   ngOnInit(): void {
     this.articleService
@@ -34,8 +32,8 @@ export class ArticleComponent implements OnInit, OnDestroy {
       });
   }
 
-  private getArticle() {
-    const articleFilename = this.route.snapshot.params['filename'];
+  onClickReadMore() {
+    this.router.navigateByUrl(`articles/${this.article.filename}`);
   }
 
   ngOnDestroy(): void {

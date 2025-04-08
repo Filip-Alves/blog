@@ -1,0 +1,38 @@
+<!-- article-detail.component.html -->
+<div class="container mt-4">
+  <div class="mb-3">
+    <a [routerLink]="['/']" class="btn btn-outline-primary">
+      <fa-icon [icon]="faArrowLeft"></fa-icon> Retour à la liste
+    </a>
+  </div>
+
+  @if (loading) {
+  <div class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Chargement...</span>
+    </div>
+  </div>
+  } @else if (error) {
+  <div class="alert alert-danger">L'article demandé n'a pas été trouvé.</div>
+  } @else if (article) {
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title text-center mb-4">{{ article.title }}</h1>
+
+      <div class="text-muted mb-3">
+        Publié le {{ article.date | date : "longDate" }}
+      </div>
+
+      <div class="mb-3">
+        @for (tag of article.tags; track tag) {
+        <span class="badge bg-primary me-1">{{ tag }}</span>
+        }
+      </div>
+
+      <p class="lead mb-4">{{ article.description }}</p>
+
+      <div class="article-content" [innerHTML]="article.htmlContent"></div>
+    </div>
+  </div>
+  }
+</div>
