@@ -14,5 +14,21 @@
     "description": "Toutes mes notes sur les bases en Angular",
     "date": "2025-04-01",
     "tags": ["angular", "services"]
+  },
+  {
+    "title": "Fiche Complète Java",
+    "filename": "article3.md",
+    "path": "assets/articles/article3.md",
+    "description": "Une fiche détaillée sur les bases et notions avancées en Java, accompagnée d'exemples de code simples et explicatifs.",
+    "date": "2025-04-10",
+    "tags": ["java", "programmation", "tutoriel", "notions"]
+  },
+  {
+    "title": "Fiche Complète Spring Boot",
+    "filename": "article4.md",
+    "path": "assets/articles/article4.md",
+    "description": "Une fiche détaillée sur Spring Boot, couvrant l'introduction, la configuration du projet, la création d'une application de base et les notions avancées telles que la gestion des bases de données, la sécurité et le monitoring.",
+    "date": "2025-04-10",
+    "tags": ["spring boot", "java", "microservices", "tutoriel"]
   }
 ]
